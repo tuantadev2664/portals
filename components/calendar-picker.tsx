@@ -162,7 +162,7 @@ export default function CalendarPicker() {
               key={index}
               onClick={() => handleDateClick(day)}
               className={`
-                w-[34px] h-[34px] font-medium flex items-center justify-center text-[14px] rounded-lg transition-all duration-200
+                w-[34px] h-[34px] font-medium flex flex-col items-center justify-center text-[14px] rounded-lg transition-all duration-200
                 ${
                   !day.isCurrentMonth
                     ? "text-[#868687] dark:text-[##868687] cursor-default"
@@ -177,6 +177,7 @@ export default function CalendarPicker() {
               `}
             >
               {day.date}
+              <span className="w-[5px] h-[5px] rounded-full bg-[#724BF9]"></span>
             </button>
           );
         })}
