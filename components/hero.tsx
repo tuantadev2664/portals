@@ -28,7 +28,7 @@ export default function Hero() {
           />
           {/* chấm thông báo (tùy chọn) */}
           <span
-            className="absolute z-20 w-6 h-6 bg-red-500 rounded-full -bottom-1 -right-1 ring-2 ring-white"
+            className="absolute z-20 w-6 h-6 bg-red-500 rounded-full -bottom-1 -right-1"
             aria-hidden="true"
           />
         </div>

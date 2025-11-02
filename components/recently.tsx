@@ -13,7 +13,7 @@ export default function Recently() {
   return (
     <div className="space-y-6">
       <h2 className="flex justify-start text-xl font-medium">
-        Recently Update
+        Recently Updated
       </h2>
       <div className="flex gap-4">
         {recentlyData.map((item, index) => (

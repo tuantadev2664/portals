@@ -6,10 +6,27 @@ import React from "react";
 import { Avatar, AvatarGroup, Button, Divider } from "@heroui/react";
 import { DarkModeIcon, BellIcon } from "./icons";
 import { useTheme } from "next-themes";
+import { Badge } from "@heroui/react";
 
 export default function Navbar() {
-  const avatarColor = ["#FF4CAC", "#7054FE", "#4193FE", "#32BB70"];
-  const avatarNames = ["J", "A", "H", "F"];
+  const avatar = [
+    {
+      name: "J",
+      color: "#FF4CAC",
+    },
+    {
+      name: "A",
+      color: "#7054FE",
+    },
+    {
+      name: "H",
+      color: "#4193FE",
+    },
+    {
+      name: "F",
+      color: "#32BB70",
+    },
+  ];
 
   const { theme, setTheme } = useTheme();
   const onChange = () => {
@@ -37,20 +54,21 @@ export default function Navbar() {
             radius="sm"
             max={4}
             total={7}
-            className="flex gap-1"
+            className="flex gap-1 pointer-events-none"
             renderCount={(count) => (
               <div className="w-8 h-8 rounded-md bg-[#232323] text-white/70 text-sm flex items-center justify-center -ml-3 z-50">
                 <p className="opacity-60">{`${count - 4}+`}</p>
               </div>
             )}
           >
-            {avatarNames.map((name, index) => (
+            {avatar.map((item) => (
               <Avatar
-                key={name}
-                name={name}
-                alt={`Avatar ${name}`}
+                key={item.name}
+                name={item.name}
+                alt={`Avatar ${item.name}`}
+                style={{ backgroundColor: item.color }}
                 classNames={{
-                  base: `bg-[${avatarColor[index]}] text-white`,
+                  base: "text-white",
                 }}
               />
             ))}

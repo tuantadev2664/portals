@@ -10,7 +10,7 @@ export default function CardRecently({
 }) {
   return (
     <div className="relative isolate">
-      <div className="w-[180px] h-[120px] rounded-xl absolute ml-2 -z-10 -top-2 bg-[#E7E7E7] -rotate-3"></div>
+      <div className="w-[180px] h-[120px] rounded-xl absolute ml-2 -z-10 -top-2 bg-[#E7E7E7] dark:bg-[#111111] dark:border-1 dark:border-[#3E3E3E] -rotate-3"></div>
       <Card radius="lg">
         <Image
           src="./card-image.png"
@@ -20,7 +20,9 @@ export default function CardRecently({
           width={200}
         />
         <CardHeader className="absolute z-10">
-          <div className="flex items-center justify-between w-full gap-2">
+          <div
+            className={`flex items-center ${isLive ? "justify-between" : "justify-end"} w-full gap-2`}
+          >
             {isLive && <div className="bg-[#FF5B5B] rounded-sm w-3 h-3"></div>}
             <div className="flex items-center justify-center gap-2">
               {[...Array(2)].map((_, index) => (
