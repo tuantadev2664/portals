@@ -177,7 +177,11 @@ export default function CalendarPicker() {
               `}
             >
               {day.date}
-              <span className="w-[5px] h-[5px] rounded-full bg-[#724BF9]"></span>
+              {(Number(day.date) % 11 == 0 || Number(day.date) % 26 == 0) && (
+                <span
+                  className={`w-[5px] h-[5px] rounded-full ${day.isCurrentMonth ? "bg-[#724BF9]" : "bg-[#98A2B3]"}`}
+                ></span>
+              )}
             </button>
           );
         })}
